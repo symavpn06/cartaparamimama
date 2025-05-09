@@ -146,7 +146,37 @@
   </style>
 </head>
 <body>
-  <h1>¡FELIZ DÍA MAMÁ ❤️!</h1>
+    
+    
+    <!-- Reproductor de música -->
+  <audio id="musica" src="https://filen.mc365.eu.org/api/public/dl/zkH98dYT" type="audio/mpeg" preload="auto"></audio>
+
+  <script>
+    // Reproducir automáticamente al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+      const audio = document.getElementById('musica');
+      // Intentar reproducir
+      audio.play().catch(function(error) {
+        // Si la reproducción automática falla (por políticas del navegador),
+        // puedes mostrar un botón para que el usuario inicie la música manualmente.
+        console.log('Autoplay no permitido automáticamente:', error);
+        // Opcional: crear un botón para reproducir manualmente
+        const btn = document.createElement('button');
+        btn.textContent = 'Reproducir';
+        btn.style.marginTop = '20px';
+        btn.onclick = () => {
+          audio.play();
+          btn.remove();
+        };
+        document.body.appendChild(btn);
+      });
+    });
+  </script>
+    
+    
+  <center><h1>¡FELIZ DÍA MAMÁ ❤️!</h1></center>
+  
+  <h3><span>si sale un boton por aqui de musica puchale reproducir antes de leer esto </span></h3>
 
   <div class="envoltura-sobre">
     <div class="sobre">
@@ -176,29 +206,6 @@
     <div class="solapa-derecha"></div>
   </div>
 
-  <!-- Reproductor de música -->
-  <audio id="musica" src="https://filen.mc365.eu.org/api/public/dl/zkH98dYT" type="audio/mpeg" preload="auto"></audio>
-
-  <script>
-    // Reproducir automáticamente al cargar la página
-    document.addEventListener('DOMContentLoaded', function() {
-      const audio = document.getElementById('musica');
-      // Intentar reproducir
-      audio.play().catch(function(error) {
-        // Si la reproducción automática falla (por políticas del navegador),
-        // puedes mostrar un botón para que el usuario inicie la música manualmente.
-        console.log('Autoplay no permitido automáticamente:', error);
-        // Opcional: crear un botón para reproducir manualmente
-        const btn = document.createElement('button');
-        btn.textContent = 'Reproducir Música';
-        btn.style.marginTop = '20px';
-        btn.onclick = () => {
-          audio.play();
-          btn.remove();
-        };
-        document.body.appendChild(btn);
-      });
-    });
-  </script>
+  
 </body>
 </html>
